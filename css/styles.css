@@ -1,0 +1,208 @@
+/* Importamos una fuente moderna de Google Fonts */
+@import url('https://googleapis.com');
+
+/* Variables de color para facilitar cambios futuros */
+:root {
+    --color-primario: #1e3a8a;    /* Azul institucional */
+    --color-secundario: #f59e0b;  /* Amarillo/Dorado vibrante */
+    --color-acento: #2563eb;      /* Azul brillante para detalles */
+    --color-texto: #334155;       /* Gris oscuro para lectura cómoda */
+    --color-fondo: #f8fafc;       /* Fondo claro suave */
+    --blanco: #ffffff;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el botón */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    overflow-x: hidden;
+}
+
+/* =========================================
+   SECCIÓN PORTADA (HERO)
+   ========================================= */
+.portada {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 8%;
+    gap: 3rem;
+    overflow: hidden;
+}
+
+/* Columna de texto */
+.contenido {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.etiqueta {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: var(--color-primario);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.contenido h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--color-primario);
+    margin-bottom: 1.2rem;
+}
+
+.contenido h1 span {
+    display: block;
+    color: var(--color-secundario);
+}
+
+.contenido p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.2rem;
+    color: #475569;
+}
+
+/* Botón principal */
+.boton {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 1rem 2.2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(30, 58, 138, 0.2);
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: var(--color-acento);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Mensaje inferior con punto indicador */
+.mensaje {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    background-color: #10b981; /* Verde activo */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+/* Columna de imagen */
+.imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+    /* Sombra suave si la imagen es rectangular; quítala si es PNG sin fondo */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12)); 
+}
+
+/* Elemento decorativo de fondo */
+.decoracion {
+    position: absolute;
+    top: -15%;
+    right: -10%;
+    width: 55vw;
+    height: 55vw;
+    max-width: 750px;
+    max-height: 750px;
+    background: linear-gradient(135deg, #dbeafe 0%, #fef3c7 100%);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* =========================================
+   SEGUNDA SECCIÓN (MATRÍCULA)
+   ========================================= */
+.segunda {
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    text-align: center;
+    padding: 6rem 8%;
+}
+
+.segunda h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-secundario);
+}
+
+.segunda p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #e2e8f0;
+}
+
+/* =========================================
+   DISEÑO ADAPTABLE (MÓVILES Y TABLETS)
+   ========================================= */
+@media (max-width: 900px) {
+    .portada {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    .contenido h1 {
+        font-size: 2.6rem;
+    }
+
+    .mensaje {
+        justify-content: center;
+    }
+
+    .decoracion {
+        top: 45%;
+        right: -20%;
+        width: 90vw;
+        height: 90vw;
+    }
+}
